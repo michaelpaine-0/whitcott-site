@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Whitcott Athletic Instruments. A total back pad cut from a scan of your own back. $600 once and remade free for life.">
+<title>Whitcott Athletic Instruments</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF; --tint:#E9F1EC; --tint-2:#CFE3D7; --dark:#1C1B1A;
+  --ink:#1C1B1A; --ink-2:#44403B; --ink-3:#5E5954; --slate:#4F7260; --slate-2:#8FB2A0;
+  --line:rgba(28,27,26,.12); --blue:#A9D6C2; --blue-2:#93CBB2;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1180px; --gutter:20px; --r:24px;
+}
+*{box-sizing:border-box}
+html{color-scheme:light;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.02em;text-wrap:balance;font-style:normal}
+h1,h2{font-family:var(--serif)}
+h1{font-size:clamp(48px,6.5vw,84px);line-height:1;letter-spacing:-.03em}
+h2{font-size:clamp(36px,4.2vw,56px);line-height:1.04;letter-spacing:-.025em}
+h2 .two,h1 .two{display:block;color:var(--slate)}
+.hero h1 .two{color:rgba(255,255,255,.78)}
+h3{font-family:var(--sans);font-size:20px;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.line{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative}
+/* Qoves style hairline frame: 2 vertical rules at the content edges */
+.rails{position:relative}
+.rails::before,.rails::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line);left:max(28px,calc((100% - var(--max)) / 2 + 28px))}
+.rails::after{left:auto;right:max(28px,calc((100% - var(--max)) / 2 + 28px))}
+.rule{border-top:1px solid var(--line)}
+.pill{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:15px;font-weight:600;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;background:var(--ink);color:#fff;transition:background .2s,transform .2s}
+.pill:hover{background:#000;transform:translateY(-1px)}
+.pill.blue{background:var(--blue);color:var(--ink)}
+.pill.blue:hover{background:var(--blue-2)}
+.pill.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.pill.ghost:hover{background:rgba(255,255,255,.24)}
+.pill.light{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.pill:focus-visible,a:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--slate);outline-offset:3px}
+.tag{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);border:1px solid var(--tint-2);background:var(--paper);padding:5px 10px;border-radius:999px;margin-bottom:18px}
+.dark .tag{color:#C6DACF;border-color:rgba(255,255,255,.25);background:transparent}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--ink-2);max-width:46ch;line-height:1.45}
+.center{text-align:center}
+.center .lead{margin:18px auto 0}
+.cite{font-size:12px;line-height:1.4;color:var(--ink-3);margin-top:14px;display:flex;gap:8px;align-items:flex-start}
+.cite b{font-weight:600;color:var(--slate);font-variant-numeric:tabular-nums;flex:none}
+sup.ref{font-size:.55em;color:var(--slate);vertical-align:super;margin-left:2px;font-weight:600}
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(var(--max),calc(100% - 28px));height:60px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 26px;color:#fff;transition:background .35s,box-shadow .35s,color .35s}
+.nav.solid{background:rgba(28,27,26,.92);box-shadow:0 12px 40px rgba(0,0,0,.22);backdrop-filter:blur(10px)}
+.logo{font-family:var(--sans);font-weight:600;font-size:18px;letter-spacing:.2em}
+.menu{display:flex;gap:30px;font-size:14px;font-weight:500}
+.menu a{opacity:.9}.menu a:hover{opacity:1}
+@media (max-width:860px){.menu{display:none}}
+.nav .pill{padding:10px 18px;font-size:14px;background:#fff;color:var(--ink)}
+.nav .pill:hover{background:#F2F2F2}
+/* hero */
+.card{position:relative;margin:0 var(--gutter);border-radius:var(--r);overflow:hidden;background:var(--dark)}
+.hero{min-height:min(860px,calc(100vh - 40px));display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:url(https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=2000&q=70&fm=jpg) center 35%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.5) 0%,rgba(20,18,16,.3) 40%,rgba(20,18,16,.85) 100%),linear-gradient(90deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.25) 50%,rgba(20,18,16,0) 100%)}
+.hero .inner{position:relative;padding:150px 40px 0;max-width:760px}
+@media (max-width:700px){.hero .inner{padding:120px 24px 0}}
+.hero .kicker{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:18px}
+.hero .sub{font-size:clamp(17px,1.5vw,20px);color:rgba(255,255,255,.86);margin:22px 0 28px;max-width:40ch;line-height:1.4}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap}
+.hero .fine{font-size:13px;margin-top:16px;color:rgba(255,255,255,.75)}
+.trust{position:relative;display:grid;grid-template-columns:repeat(3,auto);gap:0 36px;padding:40px 40px 34px;margin-top:64px;font-size:14px;color:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.18)}
+.trust div{padding-left:16px;border-left:1px solid rgba(255,255,255,.25)}
+.trust div:first-child{padding-left:0;border-left:0}
+.trust b{display:block;color:#fff;font-weight:600;font-size:15px;margin-bottom:2px}
+@media (max-width:700px){.trust{grid-template-columns:1fr;gap:14px;padding:28px 24px}.trust div{border-left:0;padding-left:0}}
+/* sections */
+section.s{padding:112px 0}
+section.s.tint{background:var(--tint)}
+section.s.dark{background:var(--dark);color:#fff}
+.dark .lead{color:rgba(255,255,255,.78)}
+.dark h2 .two{color:#A9C9B8}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px;text-align:left}
+@media (max-width:1000px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.facts{grid-template-columns:1fr}}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;display:flex;flex-direction:column;min-height:250px}
+.fact .n{font-family:var(--serif);font-size:52px;line-height:1;letter-spacing:-.03em;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.fact .n small{font-size:.55em;color:var(--slate);letter-spacing:0}
+.fact p{margin-top:12px;color:var(--ink-2);font-size:15px;flex:1}
+.unsure{margin-top:26px;font-size:13px;color:var(--ink-3)}
+.unsure b{font-weight:700;color:var(--ink-2)}
+/* compare table */
+.compare{margin-top:48px;border:1px solid rgba(255,255,255,.18);border-radius:18px;overflow:hidden}
+.compare table{width:100%;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(255,255,255,.12);vertical-align:middle}
+.compare th{font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.compare tr:last-child td{border-bottom:0}
+.compare td:first-child{font-weight:600;color:#fff}
+.compare td{color:rgba(255,255,255,.75)}
+.compare tr.us td{background:rgba(255,255,255,.08);color:#fff}
+.yes{color:#9BD3B4;font-weight:700}.no{color:rgba(255,255,255,.4)}
+.tablewrap{overflow-x:auto}
+/* scan slider */
+.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:900px){.two-col{grid-template-columns:1fr}}
+.slider{position:relative;aspect-ratio:900/560;border-radius:20px;overflow:hidden;background:#F1EFEA;user-select:none;touch-action:none;border:1px solid var(--line)}
+.slider .a,.slider .b{position:absolute;inset:0}
+.slider .a{background:url(https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=2000&q=70&fm=jpg) center/cover no-repeat}
+.slider .b{clip-path:inset(0 0 0 50%)}
+.slider canvas{width:100%;height:100%;display:block}
+.slider .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.slider .knob{position:absolute;top:50%;left:50%;width:40px;height:40px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);display:grid;place-items:center;font-size:13px;font-weight:700;letter-spacing:-.05em;color:var(--ink);box-shadow:0 4px 16px rgba(0,0,0,.2);cursor:ew-resize}
+.slider .lab{position:absolute;top:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);padding:5px 9px;border-radius:999px}
+.slider .lab.l{left:14px}.slider .lab.r{right:14px}
+.kv{display:grid;grid-template-columns:1fr auto;gap:12px 20px;font-size:15px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.kv span{color:var(--ink-3)}
+.kv b{font-weight:600;font-variant-numeric:tabular-nums}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{border:1px solid var(--line);border-radius:18px;padding:24px 22px 26px;background:var(--paper)}
+.step .k{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--slate);margin-bottom:34px}
+.step h3{margin-bottom:8px}
+.step p{color:var(--ink-2);font-size:15px}
+/* band */
+.band{position:relative;margin:0 var(--gutter);border-radius:var(--r);overflow:hidden;min-height:520px;display:flex;align-items:end;color:#fff;background:url(https://images.unsplash.com/photo-1569406125624-98ee19b01d4a?w=2000&q=70&fm=jpg) center/cover no-repeat}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.1) 0%,rgba(20,18,16,.82) 100%)}
+.band .inner{position:relative;padding:64px 48px}
+@media (max-width:600px){.band .inner{padding:40px 24px}}
+.band h2{max-width:16ch}
+/* promise */
+.promise{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media (max-width:900px){.promise{grid-template-columns:1fr}}
+.promise ol{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:p}
+.promise li{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px 18px 56px;position:relative;font-size:16px}
+.promise li::before{counter-increment:p;content:"[" counter(p) "]";position:absolute;left:20px;top:20px;font-size:13px;font-weight:600;color:var(--slate)}
+.promise li b{display:block;font-weight:600;margin-bottom:2px}
+.promise li span{color:var(--ink-2);font-size:14px}
+/* cards with photos */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.feat{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.feat .img{aspect-ratio:4/3;background-size:cover;background-position:center}
+.feat .txt{padding:22px 22px 26px}
+.feat h3{margin-bottom:8px}
+.feat p{color:var(--ink-2);font-size:15px}
+/* stories */
+.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;text-align:left}
+@media (max-width:900px){.stories{grid-template-columns:1fr}}
+.story{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;min-height:200px;position:relative}
+.story .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);font-weight:700}
+.story p{margin-top:12px;font-family:var(--serif);font-size:22px;line-height:1.2}
+.story .who{margin-top:16px;font-size:13px;color:var(--ink-3)}
+.story .ph{position:absolute;top:12px;right:12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px dashed var(--line);padding:2px 6px;border-radius:4px}
+/* faq */
+.faq{max-width:760px;margin:44px auto 0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:500;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:24px;color:var(--slate);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 0 22px;color:var(--ink-2);font-size:16px;max-width:60ch}
+/* price */
+.price{max-width:520px;margin:40px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px 32px;text-align:left}
+.price .amt{font-family:var(--serif);font-size:64px;line-height:1;letter-spacing:-.03em}
+.price .amt small{font-family:var(--sans);font-size:15px;color:var(--ink-3);letter-spacing:0;margin-left:8px}
+.price ul{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px;font-size:15px;color:var(--ink-2)}
+.price li::before{content:"\2713";color:var(--slate);font-weight:700;margin-right:10px}
+.form{display:flex;gap:10px;max-width:460px;margin:0 auto}
+.form input{flex:1;border:1px solid var(--line);border-radius:999px;padding:12px 20px;font:inherit;font-size:16px;background:var(--paper)}
+/* footer */
+footer{background:var(--tint);padding:64px 0 40px;font-size:14px;color:var(--ink-2)}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+@media (max-width:800px){footer .cols{grid-template-columns:1fr 1fr}}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px;font-weight:700}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+footer .sources{margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+footer .sources ol{margin:12px 0 0;padding-left:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;font-size:12px;color:var(--ink-3)}
+@media (max-width:700px){footer .sources ol{grid-template-columns:1fr}}
+footer .sources li b{color:var(--slate);font-weight:600;margin-right:6px}
+footer .bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--ink-3)}
+.draft{position:fixed;bottom:16px;left:16px;z-index:60;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:rgba(255,255,255,.92);border:1px solid var(--line);padding:5px 9px;border-radius:999px}
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important;transition:none!important}}
+/* sub pages */
+.page{max-width:720px;margin:0 auto;padding:130px 24px 96px}
+.page h1{font-size:clamp(44px,6vw,72px);margin:14px 0 20px}
+.page h2{font-family:var(--serif);font-size:32px;margin:44px 0 12px}
+.page p,.page li{font-size:17px;color:var(--ink-2);line-height:1.55}
+.page p{margin:0 0 14px}
+.page ul{padding-left:20px;margin:0 0 8px}
+.page li{margin-bottom:6px}
+.page .draftnote{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px dashed var(--line);padding:4px 8px;border-radius:999px;margin-bottom:12px}
+.page .back{display:inline-block;margin-top:40px;color:var(--slate);font-weight:600}
+.page .kv{grid-template-columns:1fr 1fr;background:var(--tint);border-radius:16px;padding:20px 22px;border-top:0}
+.page table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0 24px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.page th,.page td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.page th{color:var(--ink-3);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.pagehead{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+.pagehead .wrap{height:64px;display:flex;align-items:center;justify-content:space-between}
+.pagehead .logo{color:var(--ink)}
+.pagehead .menu{color:var(--ink-2)}
+.page .unsure{margin-top:0}
+</style>
+</head>
+<body>
+<div class="nav" id="nav">
+  <a class="logo" href="#">WHITCOTT</a>
+  <nav class="menu"><a href="#evidence">The evidence</a><a href="#pad">The pad</a><a href="#how">How it works</a><a href="#faq">Questions</a></nav>
+  <a class="pill" href="#waitlist">Join the waitlist</a>
+</div>
+
+<main id="home">
+<div class="card hero" id="top">
+  <div class="inner">
+    <p class="kicker">Total Back Pad</p>
+    <h1>Get up loose<span class="two">tomorrow</span></h1>
+    <p class="sub"><span class="line">Tonight you lie on a pad cut from a scan of your own back</span><span class="line">Ten minutes and the guard comes down</span></p>
+    <div class="row"><a class="pill blue" href="#waitlist">Join the waitlist</a><a class="pill ghost" href="#how">How it works</a></div>
+    <p class="fine">$600 once and remade free for life</p>
+  </div>
+  <div class="trust">
+    <div><b>Built on 8 studies</b>Every number on this page is cited</div>
+    <div><b>Made from your scan</b>Any phone and 40 seconds</div>
+    <div><b>Remade free for life</b>Rescan any time</div>
+  </div>
+</div>
+
+<div class="rails">
+<section class="s center" id="evidence"><div class="wrap">
+  <span class="tag rv">What the evidence says</span>
+  <h2 class="rv d1">The back guards<span class="two">Pressure lets it go</span></h2>
+  <p class="lead rv d2"><span class="line">The muscles either side of your spine stop switching off when it hurts</span><span class="line">Steady pressure on that band raises how much load you can take</span></p>
+  <div class="facts">
+    <div class="fact rv"><div class="n"><span data-count="61">0</span><small>%</small></div><p><span class="line">of athletes in 9 sports have had back pain</span></p><div class="cite"><b>[1]</b>Trompeter K et al 2017 Sports Medicine</div></div>
+    <div class="fact rv d1"><div class="n"><span data-count="41">0</span><small> to 100%</small></div><p><span class="line">of people with active back pain have muscles that stay on</span></p><div class="cite"><b>[2]</b>Mayer JM et al 2012 PLOS ONE</div></div>
+    <div class="fact rv d2"><div class="n"><span data-count="20">0</span><small> to 45 mm</small></div><p><span class="line">off the spine is where the muscle sits</span><span class="line">The spine itself takes no load</span></p><div class="cite"><b>[3]</b>Wilke J et al 2022 BMC Musculoskeletal Disorders</div></div>
+    <div class="fact rv d3"><div class="n"><span data-count="90">0</span><small> s</small></div><p><span class="line">of steady pressure beats 30</span><span class="line">Harder is not better</span></p><div class="cite"><b>[4]</b>Pecos-Martín D et al 2019 Acupuncture in Medicine</div></div>
+  </div>
+  <p class="unsure rv"><b>Unsure</b> massage trials are small and unblinded<sup class="ref">[5]</sup></p>
+</div></section>
+
+<section class="s dark"><div class="wrap">
+  <span class="tag rv">The old way and the new way</span>
+  <h2 class="rv d1">Shaped for no one<span class="two">or shaped from you</span></h2>
+  <div class="compare rv d2"><div class="tablewrap"><table>
+    <tr><th>Tool</th><th>Fits your spine</th><th>Whole back at once</th><th>Holds its shape</th><th>Remade as you change</th></tr>
+    <tr><td>Lacrosse ball</td><td class="yes">&#10003;</td><td class="no">&#10005;</td><td class="yes">&#10003;</td><td class="no">&#10005;</td></tr>
+    <tr><td>Foam roller</td><td class="no">&#10005;</td><td class="no">&#10005;</td><td class="no">&#10005;</td><td class="no">&#10005;</td></tr>
+    <tr><td>Spike mat</td><td class="no">&#10005;</td><td class="yes">&#10003;</td><td class="no">&#10005;</td><td class="no">&#10005;</td></tr>
+    <tr class="us"><td>Whitcott pad</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+  </table></div></div>
+  <p class="unsure rv d3" style="color:rgba(255,255,255,.6)"><b style="color:rgba(255,255,255,.85)">Unsure</b> spike mat trials missed significance between groups<sup class="ref">[6]</sup></p>
+</div></section>
+
+<section class="s" id="pad"><div class="wrap two-col">
+  <div class="slider rv" id="slider" aria-label="Drag to compare your back and your pad">
+    <div class="a"></div>
+    <div class="b"><canvas id="padCanvas" width="900" height="560"></canvas></div>
+    <div class="handle" id="handle"><div class="knob">&lt;&nbsp;&gt;</div></div>
+    <span class="lab l">Your back</span><span class="lab r">Your pad</span>
+  </div>
+  <div class="rv d1">
+    <span class="tag">Your fit report</span>
+    <h2>One scan<span class="two">one pad</span></h2>
+    <p class="lead" style="margin-top:18px"><span class="line">Every number comes from your scan and 3 intake answers</span><span class="line">Drag the line to see the knobs land on the muscle</span></p>
+    <div class="kv"><span>Sacrum to C7</span><b>512 mm</b><span>Spine channel</span><b>34 mm</b><span>Knobs</span><b>28 in 3 zones</b><span>Base</span><b>SLS TPU 88A</b><span>Lumbar</span><b>firm</b><span>Thoracic</span><b>medium</b><span>Neck</span><b>soft</b></div>
+    <a class="pill light" href="#/fit-report" style="margin-top:22px">Read a fit report</a>
+  </div>
+</div></section>
+
+<section class="s tint center"><div class="wrap">
+  <span class="tag rv">Strain to return</span>
+  <h2 class="rv d1">Your back measured<span class="two">your pad made</span></h2>
+  <div class="cards">
+    <div class="feat rv"><div class="img" style="background-image:url(https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=1600&q=70&fm=jpg)"></div><div class="txt"><h3>Strain</h3><p><span class="line">You pulled hard today</span><span class="line">The muscles by your spine are still on</span></p></div></div>
+    <div class="feat rv d1"><div class="img" style="background-image:url(https://images.unsplash.com/photo-1563905652447-f0bd4d3d383a?w=1600&q=70&fm=jpg)"></div><div class="txt"><h3>Release</h3><p><span class="line">Steady pressure where the muscle sits</span><span class="line">The nervous system lets go inside the session<sup class="ref">[7]</sup></span></p></div></div>
+    <div class="feat rv d2"><div class="img" style="background-image:url(https://images.unsplash.com/photo-1552650272-b8a34e21bc4b?w=1600&q=70&fm=jpg)"></div><div class="txt"><h3>Return</h3><p><span class="line">4 weeks of use raised pressure tolerance and it held 6 months<sup class="ref">[8]</sup></span></p></div></div>
+  </div>
+</div></section>
+
+<section class="s" id="how"><div class="wrap">
+  <span class="tag rv">How it works</span>
+  <h2 class="rv d1">Scan then make<span class="two">then ship then remake</span></h2>
+  <div class="steps">
+    <div class="step rv"><div class="k">[1]</div><h3>Order then scan</h3><p><span class="line">Pay once</span><span class="line">A friend films 40 seconds on any phone while you lie down</span></p></div>
+    <div class="step rv d1"><div class="k">[2]</div><h3>We build the file</h3><p><span class="line">Your mesh and your knobs</span><span class="line">One person checks it for 5 minutes</span></p></div>
+    <div class="step rv d2"><div class="k">[3]</div><h3>Printed and shipped in 10 days</h3><p><span class="line">Rigid box and a return label</span></p></div>
+    <div class="step rv d3"><div class="k">[4]</div><h3>Re-tune or remake free</h3><p><span class="line">Any reason for 90 days</span><span class="line">Body change or defect for life</span></p></div>
+  </div>
+</div></section>
+</div>
+
+<div class="band rv"><div class="inner">
+  <span class="tag">For the people who train hardest</span>
+  <h2>Rowing and lifting and running and the long grind</h2>
+</div></div>
+
+<div class="rails">
+<section class="s tint" id="promise"><div class="wrap promise">
+  <div class="rv"><span class="tag">The promise</span><h2>Your scan<span class="two">your pad and your data</span></h2></div>
+  <ol class="rv d1">
+    <li><b>Rescan any time and it is remade free for life</b><span>No receipt and no fee</span></li>
+    <li><b>One price and never on sale</b><span>$600 today is $600 next year</span></li>
+    <li><b>No battery and no app after the scan</b><span>Nothing to charge or update</span></li>
+    <li><b>You own your scan</b><span>Encrypted and deleted on request</span></li>
+    <li><b>A named human answers in 1 business day</b></li>
+  </ol>
+</div></section>
+
+<section class="s center"><div class="wrap">
+  <span class="tag rv">Founding run</span>
+  <h2 class="rv d1">What the first 25 say</h2>
+  <div class="stories">
+    <div class="story rv"><span class="ph">Placeholder</span><div class="t">Lumbar</div><p>Founding run review goes here once the first pads ship</p><div class="who">Name and sport</div></div>
+    <div class="story rv d1"><span class="ph">Placeholder</span><div class="t">Thoracic</div><p>Founding run review goes here once the first pads ship</p><div class="who">Name and sport</div></div>
+    <div class="story rv d2"><span class="ph">Placeholder</span><div class="t">Neck</div><p>Founding run review goes here once the first pads ship</p><div class="who">Name and sport</div></div>
+  </div>
+</div></section>
+
+<section class="s tint center" id="faq"><div class="wrap">
+  <span class="tag rv">Questions</span>
+  <h2 class="rv d1">Before you scan</h2>
+  <div class="faq rv d2">
+    <details><summary>Do I need an iPhone</summary><div class="ans"><span class="line">No</span><span class="line">Any phone with a camera and a browser</span><span class="line">A friend films 40 seconds while you lie down</span></div></details>
+    <details><summary>Is this a medical device</summary><div class="ans"><span class="line">No</span><span class="line">It is a wellness product for muscle tension and soreness</span><span class="line">If you have an injury or a spinal condition talk to a clinician first</span></div></details>
+    <details><summary>How firm is it</summary><div class="ans"><span class="line">Firm at the lumbar and medium at the thoracic and soft at the neck</span><span class="line">Your 3 intake answers shift each zone one step</span><span class="line">Any zone re-tuned free in the first 90 days</span></div></details>
+    <details><summary>What if my body changes</summary><div class="ans"><span class="line">Rescan and a new pad ships</span><span class="line">Free for life with no receipt</span></div></details>
+    <details><summary>What is it made of</summary><div class="ans"><span class="line">Laser sintered TPU at Shore 88A</span><span class="line">No foam and no fabric and no battery</span></div></details>
+    <details><summary>Why $600</summary><div class="ans"><span class="line">One price that covers the scan and the pad and the fit report and US shipping and every remake</span><span class="line">Never on sale</span></div></details>
+  </div>
+</div></section>
+
+<section class="s center" id="waitlist"><div class="wrap">
+  <span class="tag rv">Founding run</span>
+  <h2 class="rv d1">Get scanned</h2>
+  <p class="lead rv d2"><span class="line">25 pads in the founding run</span><span class="line">Full price and full promise</span></p>
+  <div class="price rv d3">
+    <div class="amt">$600<small>once</small></div>
+    <ul><li>Scan on any phone</li><li>Pad built from your file</li><li>Fit report in the box</li><li>US shipping both ways</li><li>Remade free for life</li></ul>
+    <form class="form" id="wl"><input type="email" id="wlmail" placeholder="Your email" aria-label="Email" required><button class="pill blue" type="submit">Join</button></form>
+    <p class="unsure" style="margin-top:14px">We email you when the run opens and nothing else</p>
+  </div>
+</div></section>
+</div>
+</main>
+<main id="pages" hidden></main>
+
+<footer id="company"><div class="wrap">
+  <div class="cols">
+    <div><div class="logo" style="color:var(--ink)">WHITCOTT</div><p style="margin-top:12px;max-width:30ch"><span class="line">Whitcott Athletic Instruments</span><span class="line">Recovery gear made for one body at a time</span></p></div>
+    <div><h4>Product</h4><ul><li><a href="#pad">Total Back Pad</a></li><li><a href="#promise">The promise</a></li><li><a href="#/fit-report">Fit report</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#/about">About</a></li><li><a href="#/materials">Materials</a></li><li><a href="#/contact">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#/privacy">Privacy</a></li><li><a href="#/terms">Terms</a></li><li><a href="#/refit-returns">Refit and returns</a></li></ul></div>
+  </div>
+  <div class="sources"><h4>Sources</h4>
+    <ol>
+      <li><b>[1]</b>Trompeter K Fett D Platen P 2017 Prevalence of back pain in sports Sports Medicine 47</li>
+      <li><b>[2]</b>Mayer JM et al 2012 Flexion relaxation in chronic low back pain PLOS ONE 7</li>
+      <li><b>[3]</b>Wilke J et al 2022 Lumbar multifidus size and position BMC Musculoskeletal Disorders 23</li>
+      <li><b>[4]</b>Pecos-Martín D et al 2019 Duration of trigger point pressure release Acupuncture in Medicine 37</li>
+      <li><b>[5]</b>Dupuy O et al 2018 Recovery techniques and DOMS Frontiers in Physiology 9</li>
+      <li><b>[6]</b>Applied Sciences 2021 Acupressure mat RCT n 44</li>
+      <li><b>[7]</b>Nakamura M et al 2021 Foam rolling mechanisms Frontiers in Physiology 12</li>
+      <li><b>[8]</b>Frontiers in Physiology 2024 Four weeks of lumbar rolling raised pressure pain threshold at 6 months</li>
+    </ol>
+  </div>
+  <div class="bottom"><span>© 2026 Whitcott Athletic Instruments</span><span>Raleigh NC</span></div>
+</div></footer>
+
+<script type="text/template" id="tpl-fit-report">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Product</p><h1>The fit report</h1>
+<p><span class="line">Every pad ships with one page of numbers</span><span class="line">It is the record of your scan and what was checked before the box closed</span></p>
+<h2>What it holds</h2>
+<div class="kv"><span>Scan date and app version</span><b>when and how</b><span>Sacrum to C7</span><b>your spine length in mm</b><span>Spine channel</span><b>30 to 36 mm</b><span>Knobs and zones</span><b>24 to 32 in 3 zones</b><span>Zone firmness</span><b>lumbar and thoracic and neck</b><span>Base and lot</span><b>SLS TPU and powder lot</b><span>Outgoing check</span><b>3 dimensions to ±1·5 mm</b><span>Pad version</span><b>one per remake</b></div>
+<h2>How it is made</h2>
+<p><span class="line">The app finds your spine line from the scan and 3 landmarks you confirm</span><span class="line">The channel your spine never touches is cut along that line</span><span class="line">Knobs sit 25 to 40 mm either side</span><span class="line">Your 3 intake answers set the firmness per zone</span><span class="line">One person reviews the file for 5 minutes before it prints</span><span class="line">If any dimension is off by more than 1·5 mm the pad does not ship</span></p>
+<h2>Why it matters</h2>
+<p><span class="line">When you rescan the new report sits next to the old one</span><span class="line">You see what changed in your back and what changed in the pad</span></p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-about">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Company</p><h1>About Whitcott</h1>
+<p>Whitcott Athletic Instruments makes recovery gear for one body at a time. We are in Raleigh, North Carolina.</p>
+<h2>Where it started</h2>
+<p>A lacrosse ball works because you put it where it hurts. Nothing does that for the whole back at once, and nothing holds the shape from one night to the next. The first pad was made for the founder's own back. He is still the first customer.</p>
+<h2>How we work</h2>
+<p>Every pad is built from a file, never a mold. A phone scan becomes a mesh, and the mesh becomes a print. One person looks at every file for 5 minutes. Everything else is a job in a queue.</p>
+<h2>What we do not do</h2>
+<ul><li>No sales and no codes.</li><li>No battery and no subscription.</li><li>No medical claims.</li><li>No reselling your scan or your address.</li></ul>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-materials">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Company</p><h1>Materials</h1>
+<p>One material, chosen for how it holds a shape under a body.</p>
+<h2>The base</h2>
+<p>Laser sintered thermoplastic polyurethane at Shore 88A to 90A. It is printed from powder, so there is no mold and no seam. It sits on a floor without rocking, and it does not pack down the way foam does.</p>
+<h2>The knobs</h2>
+<p>Printed as part of the base in the same material. Tip radius and height set the firmness. No glue, and nothing to come off.</p>
+<h2>Care</h2>
+<ul><li>Wipe with a damp cloth and mild soap.</li><li>No bleach, no solvents, no dishwasher.</li><li>Keep it out of a hot car. TPU softens above 60 °C.</li><li>Store flat or on edge.</li></ul>
+<h2>What it is not</h2>
+<ul><li>No latex, no PVC, no phthalates.</li><li>No battery and no electronics.</li><li>No fabric cover to wash or wear out.</li></ul>
+<h2>End of life</h2>
+<p>Send a replaced pad back with the label in the box. We collect them for material recycling with our print partners.</p>
+<p class="unsure"><b>Unsure:</b> cleaning, heat and recycling lines wait on the final material data sheet.</p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-contact">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Company</p><h1>Contact</h1>
+<p>One address. A named person answers within 1 business day.</p>
+<h2>Email</h2>
+<p><a href="mailto:help@whitcott.com">help@whitcott.com</a>. Orders, scan help, refits and returns all go to the same address.</p>
+<h2>Hours</h2>
+<p>Monday to Friday, Eastern time. If your pad is late, we email you first.</p>
+<h2>Mail</h2>
+<p>Whitcott Athletic Instruments<br>Raleigh, NC<br>Street address to be added.</p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-privacy">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Legal</p><span class="draftnote">Draft pending legal review</span><h1>Privacy</h1>
+<p>We collect what it takes to make and ship your pad. We keep it as long as you want a pad. We never sell it.</p>
+<h2>What we collect</h2>
+<ul><li>Your scan as a 3D mesh, with 3 landmarks and 3 intake answers.</li><li>Name, email, shipping address and the last 4 digits of your card.</li><li>Phone model, app version and scan quality metrics.</li><li>What you write to us and what we write back.</li></ul>
+<h2>What we do with it</h2>
+<ul><li>Build your pad file, review it and print it.</li><li>Ship it and tell you where it is.</li><li>Remake it when you ask.</li><li>Answer your email.</li></ul>
+<p>We do not build datasets from customer scans, and we do not train models on them.</p>
+<h2>Who else sees it</h2>
+<ul><li>Print partners get the geometry file and a job number, never your name.</li><li>Carriers get your name and address.</li><li>Our storefront and payment providers get what they need to take the order.</li><li>Cloud storage holds your files encrypted at rest in the United States.</li></ul>
+<h2>How long we keep it</h2>
+<p>Your scan stays on file for as long as you might want a remake. Email us and we delete it within 30 days. Order records stay as long as tax rules require.</p>
+<h2>Children</h2>
+<p>Orders are for adults 18 and over. A parent orders for a younger athlete and is the customer of record.</p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-terms">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Legal</p><span class="draftnote">Draft pending legal review</span><h1>Terms</h1>
+<p>Plain terms for buying and using a Whitcott pad. Where these and the law differ, the law wins.</p>
+<h2>What you are buying</h2>
+<p>A custom made wellness product built from your scan. It is not a medical device. It does not diagnose, treat, cure or prevent any condition. If you have a back injury or a spinal condition, or you are pregnant, talk to a clinician first.</p>
+<h2>Price</h2>
+<p>One price, shown at checkout. It includes the scan, the pad, the fit report, US shipping and the promise. Sales tax is added where required.</p>
+<h2>Ordering and the scan</h2>
+<p>You pay first, then scan with the Whitcott scan page. Your order waits until a scan passes the checks. We may ask for a rescan. If you cannot produce a usable scan within 30 days, we refund you in full.</p>
+<h2>Delivery</h2>
+<p>We aim to ship within 10 business days of an approved scan. Past 14 days, you may cancel for a full refund.</p>
+<h2>The promise</h2>
+<ul><li>90 day re-tune for any reason.</li><li>Lifetime remake for body change or defect.</li><li>Not covered: damage from heat, solvents or cutting.</li></ul>
+<p>The promise is for the original customer and is not transferable.</p>
+<h2>Using the pad</h2>
+<p>Use it on a firm, flat surface. Start with 5 minutes. Stop if you feel sharp pain, numbness or tingling. Do not use it over broken skin.</p>
+<h2>Liability and law</h2>
+<p>To the extent the law allows, our liability is limited to the price you paid. North Carolina law governs.</p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+<script type="text/template" id="tpl-refit-returns">
+<div class="pagehead"><div class="wrap"><a class="logo" href="#">WHITCOTT</a><nav class="menu"><a href="#pad">The pad</a><a href="#promise">The promise</a></nav></div></div>
+<article class="page"><p class="eyebrow">Legal</p><span class="draftnote">Draft pending legal review</span><h1>Refit and returns</h1>
+<p>Three paths. All of them free, and all of them start with one email.</p>
+<div class="tablewrap"><table><tr><th>Path</th><th>When</th><th>What happens</th></tr>
+<tr><td><b>Re-tune</b></td><td>First 90 days, any reason</td><td>Tell us what is off and we print a new pad.</td></tr>
+<tr><td><b>Remake</b></td><td>Any time, for life</td><td>Rescan, or tell us what broke, and a new pad ships.</td></tr>
+<tr><td><b>Refund</b></td><td>First 30 days</td><td>If a re-tune did not fix it, send the pad back. We refund in full within 5 business days.</td></tr></table></div>
+<h2>How to start</h2>
+<ul><li>Email help@whitcott.com with your order number and one line on what is wrong.</li><li>We reply within 1 business day with the next step.</li><li>New pads ship within 10 business days.</li></ul>
+<h2>What we ask</h2>
+<ul><li>Use the pad for at least 3 sessions before a re-tune, unless it is clearly wrong.</li><li>Send old pads back when we ask, so we can recycle them.</li><li>Be specific about where it misses.</li></ul>
+<h2>Shipping</h2>
+<p>Every box includes a prepaid US return label. We pay shipping both ways on every path above.</p>
+<a class="back" href="#">← Home</a></article>
+</script>
+
+
+<script>
+(function(){
+  const home=document.getElementById('home'), pages=document.getElementById('pages'), nav=document.getElementById('nav');
+  function route(){
+    const h=location.hash||'';
+    if(h.startsWith('#/')){
+      const key=h.slice(2).replace(/[^a-z-]/g,'');
+      const tpl=document.getElementById('tpl-'+key);
+      if(tpl){ pages.innerHTML=tpl.innerHTML; pages.hidden=false; home.hidden=true; nav.style.display='none'; window.scrollTo(0,0); document.title='Whitcott · '+key.replace('-',' '); return; }
+    }
+    pages.hidden=true; home.hidden=false; nav.style.display=''; document.title='Whitcott Athletic Instruments';
+    if(h && h!=='#'){ const el=document.querySelector(h); if(el) el.scrollIntoView(); }
+    setTimeout(reveal,50);
+  }
+  window.addEventListener('hashchange',route);
+
+  // nav: transparent over the hero then a dark pill
+  function onScroll(){ nav.classList.toggle('solid', window.scrollY>80); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // reveal on scroll
+  const io=('IntersectionObserver' in window)? new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); if(e.target.querySelector('[data-count]')) count(e.target); } }); },{rootMargin:'0px 0px -10% 0px',threshold:.12}) : null;
+  function reveal(){ document.querySelectorAll('.rv:not(.in)').forEach(el=>{ if(io) io.observe(el); else el.classList.add('in'); }); }
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(card){ card.querySelectorAll('[data-count]').forEach(el=>{ const end=+el.dataset.count; if(reduce){el.textContent=end;return;} const t0=performance.now(), dur=900; (function tick(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3); el.textContent=Math.round(end*e); if(p<1) requestAnimationFrame(tick); })(t0); }); }
+
+  // before and after slider
+  const sl=document.getElementById('slider'), b=sl.querySelector('.b'), hd=document.getElementById('handle');
+  let drag=false;
+  function setX(x){ const r=sl.getBoundingClientRect(); let p=(x-r.left)/r.width; p=Math.max(.04,Math.min(.96,p)); b.style.clipPath='inset(0 0 0 '+(p*100)+'%)'; hd.style.left=(p*100)+'%'; }
+  sl.addEventListener('pointerdown',e=>{drag=true; sl.setPointerCapture(e.pointerId); setX(e.clientX);});
+  sl.addEventListener('pointermove',e=>{ if(drag) setX(e.clientX); });
+  sl.addEventListener('pointerup',()=>drag=false); sl.addEventListener('pointercancel',()=>drag=false);
+  // gentle intro sweep once visible
+  let swept=false; const io2=new IntersectionObserver(es=>{ if(es[0].isIntersecting && !swept && !reduce){ swept=true; const r=sl.getBoundingClientRect(); const t0=performance.now(); (function tick(t){ const p=Math.min(1,(t-t0)/1400); const e=.5+.3*Math.sin(p*Math.PI*2); setX(r.left+e*r.width); if(p<1) requestAnimationFrame(tick); else setX(r.left+.5*r.width); })(t0); } },{threshold:.5}); io2.observe(sl);
+
+  document.getElementById('wl').addEventListener('submit',e=>{ e.preventDefault(); const m=document.getElementById('wlmail').value.trim(); location.href='mailto:help@whitcott.com?subject='+encodeURIComponent('Waitlist')+'&body='+encodeURIComponent('Add me to the founding run waitlist\n'+m); });
+  route();
+})();
+(function(){
+  const c=document.getElementById("padCanvas"),ctx=c.getContext('2d');
+  const W=c.width,H=c.height;
+  ctx.fillStyle='#F1EFEA';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(28,27,26,.06)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=30){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=30){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  const cx=W/2,cy=H/2;
+  ctx.save();ctx.translate(cx,cy);
+  ctx.beginPath();
+  ctx.moveTo(-380,-150);ctx.bezierCurveTo(-200,-190,120,-140,380,-80);
+  ctx.bezierCurveTo(410,-40,410,40,380,80);
+  ctx.bezierCurveTo(120,140,-200,190,-380,150);
+  ctx.bezierCurveTo(-420,80,-420,-80,-380,-150);ctx.closePath();
+  const g=ctx.createLinearGradient(-400,0,400,0);g.addColorStop(0,'#3A3733');g.addColorStop(1,'#2A2825');
+  ctx.fillStyle=g;ctx.fill();
+  ctx.beginPath();ctx.moveTo(-370,-17);ctx.lineTo(370,-17);ctx.lineTo(370,17);ctx.lineTo(-370,17);ctx.closePath();
+  ctx.fillStyle='#1C1B1A';ctx.fill();
+  ctx.fillStyle='rgba(247,241,232,.8)';ctx.font='600 11px Instrument Sans, sans-serif';ctx.textAlign='center';
+  ctx.fillText('SPINE CHANNEL 34 MM',0,4);
+  const zones=[{x0:-340,x1:-120,r:15,label:'LUMBAR FIRM'},{x0:-90,x1:170,r:12,label:'THORACIC MEDIUM'},{x0:200,x1:340,r:9,label:'NECK SOFT'}];
+  zones.forEach(z=>{
+    const n=Math.round((z.x1-z.x0)/44);
+    for(let i=0;i<=n;i++){
+      const x=z.x0+(z.x1-z.x0)*i/n;
+      const edge=(x+380)/760;
+      const half=(150-(edge*70))*0.62;
+      [half*0.45,half*0.95].forEach(yy=>{
+        [-1,1].forEach(s=>{
+          const y=s*yy;
+          const rg=ctx.createRadialGradient(x-3,y-3,1,x,y,z.r);rg.addColorStop(0,'#FBF6EE');rg.addColorStop(1,'#B9AE9E');
+          ctx.beginPath();ctx.arc(x,y,z.r,0,Math.PI*2);ctx.fillStyle=rg;ctx.fill();
+        });
+      });
+    }
+    ctx.fillStyle='rgba(28,27,26,.6)';ctx.font='600 10px Instrument Sans, sans-serif';ctx.textAlign='center';
+    ctx.fillText(z.label,(z.x0+z.x1)/2,-165+(z.x0>0?40:0));
+  });
+  ctx.fillStyle='rgba(28,27,26,.5)';ctx.font='600 10px Instrument Sans, sans-serif';
+  ctx.textAlign='left';ctx.fillText('SACRUM',-395,200);ctx.textAlign='right';ctx.fillText('C7',395,200);
+  ctx.restore();
+})();
+</script>
+<!-- Photos from Unsplash: Akim Young (hero) Lenin Estrada (release) bruce mars (return) Mitchell Luo (rowing) -->
+
+</body></html>
