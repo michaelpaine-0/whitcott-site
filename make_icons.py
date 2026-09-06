@@ -14,21 +14,26 @@ D = "M432 -10Q428 -10 424.0 -7.0Q420 -4 418 6L341 316Q340 324 335.0 323.5Q330 32
 # Glyph bounds in font units, from Instrument Serif "W" (upm 1000)
 XMIN, YMIN, XMAX, YMAX = -18, -10, 669, 720
 
-def svg(size, pad, stroke=0.0):
+def svg(size, pad, stroke=0.0, radius=0.0):
     gw, gh = XMAX - XMIN, YMAX - YMIN
     s = min(size * (1 - 2 * pad) / gw, size * (1 - 2 * pad) / gh)
     tx = size / 2 - (XMIN + gw / 2) * s
     ty = size / 2 + (YMIN + gh / 2) * s
     st = (f' stroke="{SAGE}" stroke-width="{stroke / s:.3f}" stroke-linejoin="round"'
           if stroke else "")
+    r = size * radius
+    rxy = f' rx="{r:.3f}" ry="{r:.3f}"' if radius else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}"'
             f' role="img" aria-label="Whitcott">\n'
-            f'  <rect width="{size}" height="{size}" fill="{WHITE}"/>\n'
+            f'  <rect width="{size}" height="{size}"{rxy} fill="{WHITE}"/>\n'
             f'  <path transform="translate({tx:.3f} {ty:.3f}) scale({s:.5f} -{s:.5f})"'
             f' d="{D}" fill="{SAGE}"{st}/>\n</svg>\n')
 
-# Tab icon: weighted, because Instrument Serif hairlines vanish under ~24px
-small = svg(64, 0.07, stroke=1.15)
+# Tab icon: weighted, because Instrument Serif hairlines vanish under ~24px.
+# Rounded background (corners transparent) - the browser tab chip look.
+# apple-touch-icon and icon-512 stay square: iOS and PWA launchers mask
+# those themselves, so rounding here would double up with that mask.
+small = svg(64, 0.07, stroke=1.15, radius=0.22)
 (OUT / "favicon.svg").write_text(small)
 
 # Large sizes: clean outline, more padding
