@@ -1,7 +1,25 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Whitcott Athletic Instruments. A total back pad cut from a scan of your own back. $600 once and remade free for life.">
+<meta name="description" content="Whitcott Athletic Instruments is a company that makes individualized recovery tools for high-performance athletes.">
 <title>Whitcott Athletic Instruments</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://www.whitcott.com/">
+<meta name="theme-color" content="#1C1B1A">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.whitcott.com/">
+<meta property="og:title" content="Whitcott Athletic Instruments">
+<meta property="og:description" content="Whitcott Athletic Instruments is a company that makes individualized recovery tools for high-performance athletes.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=1200&h=630&fit=crop&q=70&fm=jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Whitcott Athletic Instruments">
+<meta name="twitter:description" content="Whitcott Athletic Instruments is a company that makes individualized recovery tools for high-performance athletes.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=1200&h=630&fit=crop&q=70&fm=jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <style>
 :root{
@@ -138,10 +156,11 @@ section.s.dark{background:var(--dark);color:#fff}
 .step h3{margin-bottom:8px}
 .step p{color:var(--ink-2);font-size:15px}
 /* band */
-.band{position:relative;margin:0 var(--gutter);border-radius:var(--r);overflow:hidden;min-height:520px;display:flex;align-items:end;color:#fff;background:url(https://images.unsplash.com/photo-1569406125624-98ee19b01d4a?w=2000&q=70&fm=jpg) center/cover no-repeat}
+.band{position:relative;margin:0;border-radius:0;overflow:hidden;min-height:520px;display:flex;align-items:end;color:#fff;background:url(https://images.unsplash.com/photo-1569406125624-98ee19b01d4a?w=2000&q=70&fm=jpg) center/cover no-repeat}
 .band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.1) 0%,rgba(20,18,16,.82) 100%)}
-.band .inner{position:relative;padding:64px 48px}
-@media (max-width:600px){.band .inner{padding:40px 24px}}
+/* left/right match .wrap's content column, same treatment as .hero .inner */
+.band .inner{position:relative;padding-top:64px;padding-bottom:64px;padding-left:max(28px,calc((100% - var(--max)) / 2 + 28px));padding-right:max(28px,calc((100% - var(--max)) / 2 + 28px))}
+@media (max-width:600px){.band .inner{padding-top:40px;padding-bottom:40px}}
 .band h2{max-width:16ch}
 /* promise */
 .promise{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -170,11 +189,11 @@ section.s.dark{background:var(--dark);color:#fff}
 /* faq */
 .faq{max-width:760px;margin:44px auto 0;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:500;position:relative}
+.faq summary{display:block;list-style:none;cursor:pointer;padding:20px 40px;font-size:18px;font-weight:500;position:relative}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:24px;color:var(--slate);transition:transform .25s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq .ans{padding:0 0 22px;color:var(--ink-2);font-size:16px;max-width:60ch}
+.faq .ans{margin-inline:auto;padding:0 0 22px;color:var(--ink-2);font-size:16px;max-width:60ch}
 /* price */
 .price{max-width:520px;margin:40px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px 32px}
 .price .amt{font-family:var(--serif);font-size:64px;line-height:1;letter-spacing:-.03em}
