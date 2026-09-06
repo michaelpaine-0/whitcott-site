@@ -26,10 +26,8 @@ h3{font-family:var(--sans);font-size:20px;font-weight:600;letter-spacing:-.01em}
 p{margin:0}
 .line{display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative}
-/* Qoves style hairline frame: 2 vertical rules at the content edges */
+/* .rails divs stay as section containers (position:relative); the hairline pseudo-elements they used to draw are removed */
 .rails{position:relative}
-.rails::before,.rails::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line);left:max(28px,calc((100% - var(--max)) / 2 + 28px))}
-.rails::after{left:auto;right:max(28px,calc((100% - var(--max)) / 2 + 28px))}
 .rule{border-top:1px solid var(--line)}
 .pill{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:15px;font-weight:600;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;background:var(--ink);color:#fff;transition:background .2s,transform .2s}
 .pill:hover{background:#000;transform:translateY(-1px)}
@@ -74,19 +72,21 @@ sup.ref{font-size:.55em;color:var(--slate);vertical-align:super;margin-left:2px;
 @media (max-width:860px){.mnav{display:block;position:relative}}
 /* hero */
 .card{position:relative;margin:0 var(--gutter);border-radius:var(--r);overflow:hidden;background:var(--dark)}
+.card.hero{margin:0;border-radius:0}
 .hero{min-height:min(860px,calc(100vh - 40px));display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:url(https://images.unsplash.com/photo-1563427632003-20f6943d3a6d?w=2000&q=70&fm=jpg) center 35%/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.5) 0%,rgba(20,18,16,.3) 40%,rgba(20,18,16,.85) 100%),linear-gradient(90deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.25) 50%,rgba(20,18,16,0) 100%)}
-.hero .inner{position:relative;padding:150px 40px 0;max-width:760px}
-@media (max-width:700px){.hero .inner{padding:120px 24px 0}}
+/* left/right match .wrap's content column so the hero lines up with every heading below it */
+.hero .inner{position:relative;padding-top:150px;padding-left:max(28px,calc((100% - var(--max)) / 2 + 28px));padding-right:max(28px,calc((100% - var(--max)) / 2 + 28px));max-width:760px}
+@media (max-width:700px){.hero .inner{padding-top:120px}}
 .hero .kicker{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:18px}
 .hero .sub{font-size:clamp(17px,1.5vw,20px);color:rgba(255,255,255,.86);margin:22px 0 28px;max-width:40ch;line-height:1.4}
 .hero .row{display:flex;gap:10px;flex-wrap:wrap}
 .hero .fine{font-size:13px;margin-top:16px;color:rgba(255,255,255,.75)}
-.trust{position:relative;display:grid;grid-template-columns:repeat(3,auto);gap:0 36px;padding:40px 40px 34px;margin-top:64px;font-size:14px;color:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.18)}
+.trust{position:relative;display:grid;grid-template-columns:repeat(3,auto);gap:0 36px;padding-top:40px;padding-bottom:34px;padding-left:max(28px,calc((100% - var(--max)) / 2 + 28px));padding-right:max(28px,calc((100% - var(--max)) / 2 + 28px));margin-top:64px;font-size:14px;color:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.18)}
 .trust div{padding-left:16px;border-left:1px solid rgba(255,255,255,.25)}
 .trust div:first-child{padding-left:0;border-left:0}
 .trust b{display:block;color:#fff;font-weight:600;font-size:15px;margin-bottom:2px}
-@media (max-width:700px){.trust{grid-template-columns:1fr;gap:14px;padding:28px 24px}.trust div{border-left:0;padding-left:0}}
+@media (max-width:700px){.trust{grid-template-columns:1fr;gap:14px;padding-top:28px;padding-bottom:28px}.trust div{border-left:0;padding-left:0}}
 /* sections */
 section.s{padding:112px 0}
 section.s.tint{background:var(--tint)}
