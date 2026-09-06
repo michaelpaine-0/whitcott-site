@@ -14,20 +14,21 @@ D = "M432 -10Q428 -10 424.0 -7.0Q420 -4 418 6L341 316Q340 324 335.0 323.5Q330 32
 # Glyph bounds in font units, from Instrument Serif "W" (upm 1000)
 XMIN, YMIN, XMAX, YMAX = -18, -10, 669, 720
 
-def svg(size, pad, stroke=0.0, radius=0.0):
+def svg(size, pad, stroke=0.0, radius=0.0, fill=SAGE, stroke_color=SAGE, bg=WHITE):
     gw, gh = XMAX - XMIN, YMAX - YMIN
     s = min(size * (1 - 2 * pad) / gw, size * (1 - 2 * pad) / gh)
     tx = size / 2 - (XMIN + gw / 2) * s
     ty = size / 2 + (YMIN + gh / 2) * s
-    st = (f' stroke="{SAGE}" stroke-width="{stroke / s:.3f}" stroke-linejoin="round"'
+    st = (f' stroke="{stroke_color}" stroke-width="{stroke / s:.3f}" stroke-linejoin="round"'
           if stroke else "")
     r = size * radius
     rxy = f' rx="{r:.3f}" ry="{r:.3f}"' if radius else ""
+    rect = f'  <rect width="{size}" height="{size}"{rxy} fill="{bg}"/>\n' if bg else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}"'
             f' role="img" aria-label="Whitcott">\n'
-            f'  <rect width="{size}" height="{size}"{rxy} fill="{WHITE}"/>\n'
+            f'{rect}'
             f'  <path transform="translate({tx:.3f} {ty:.3f}) scale({s:.5f} -{s:.5f})"'
-            f' d="{D}" fill="{SAGE}"{st}/>\n</svg>\n')
+            f' d="{D}" fill="{fill}"{st}/>\n</svg>\n')
 
 # Tab icon: weighted, because Instrument Serif hairlines vanish under ~24px.
 # Rounded background (corners transparent) - the browser tab chip look.
@@ -40,12 +41,22 @@ small = svg(64, 0.07, stroke=1.15, radius=0.22)
 large_180 = svg(180, 0.19)
 large_512 = svg(512, 0.16)
 
+# Dark-mode tab icon: white glyph with a sage border, no background rect at
+# all (clear/transparent) so the browser's own dark chrome shows through.
+# Wired via <link rel="icon" media="(prefers-color-scheme: dark)">; the
+# default sage-on-white set above stays as the light/no-preference icon.
+small_dark = svg(64, 0.07, stroke=1.6, fill=WHITE, stroke_color=SAGE, bg=None)
+(OUT / "favicon-dark.svg").write_text(small_dark)
+
 for name, src, px in (
-    ("favicon-16x16.png",    small,     16),
-    ("favicon-32x32.png",    small,     32),
-    ("_f48.png",             small,     48),
-    ("apple-touch-icon.png", large_180, 180),
-    ("icon-512.png",         large_512, 512),
+    ("favicon-16x16.png",      small,      16),
+    ("favicon-32x32.png",      small,      32),
+    ("_f48.png",               small,      48),
+    ("favicon-16x16-dark.png", small_dark, 16),
+    ("favicon-32x32-dark.png", small_dark, 32),
+    ("_f48-dark.png",          small_dark, 48),
+    ("apple-touch-icon.png",   large_180,  180),
+    ("icon-512.png",           large_512,  512),
 ):
     cairosvg.svg2png(bytestring=src.encode(), write_to=str(OUT / name),
                      output_width=px, output_height=px)
@@ -53,6 +64,10 @@ for name, src, px in (
 Image.open(OUT / "_f48.png").convert("RGBA").save(
     OUT / "favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
 (OUT / "_f48.png").unlink()
+
+Image.open(OUT / "_f48-dark.png").convert("RGBA").save(
+    OUT / "favicon-dark.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
+(OUT / "_f48-dark.png").unlink()
 
 for p in sorted(OUT.glob("*")):
     if p.suffix in {".png", ".ico", ".svg"}:
